@@ -25,6 +25,10 @@ from weather import (
 def test_parse_time_regular_time():
     assert parse_time("14:21") == 861
 
+def test_parse_time_non_numeric():
+    with pytest.raises(ValueError):
+        parse_time("14:-21")
+
 def test_parse_time_colo():
     with pytest.raises(ValueError):
         parse_time("14.21")
