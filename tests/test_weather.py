@@ -30,7 +30,7 @@ def test_parse_time_colo():
         parse_time("14.21")
 
 def test_parse_time_three_parts():
-     with pytest.rasies(ValueError):
+     with pytest.raises(ValueError):
          parse_time("14:25:22")
 
 def test_parse_time_zero():
