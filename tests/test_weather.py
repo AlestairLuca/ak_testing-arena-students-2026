@@ -29,16 +29,20 @@ def test_parse_time_colo():
     with pytest.raises(ValueError):
         parse_time("14.21")
 
+def test_parse_time_three_parts():
+     with pytest.rasies(ValueError):
+         parse_time("14:25:22")
+
 def test_parse_time_zero():
     assert parse_time("09:05") == 545
 
 def test_parse_time_hour_oob():
     with pytest.raises(ValueError):
-        parse_time("54:22")
+        parse_time("24:22")
 
 def test_parse_time_minute_oob():
     with pytest.raises(ValueError):
-        parse_time("12:87")
+        parse_time("12:60")
 
 def test_parse_time_invalid_time():
     with pytest.raises(ValueError):
